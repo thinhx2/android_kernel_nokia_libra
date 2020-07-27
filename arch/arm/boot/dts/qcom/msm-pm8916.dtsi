@@ -31,7 +31,6 @@
 			interrupt-names = "kpdpwr", "resin";
 			qcom,pon-dbc-delay = <15625>;
 			qcom,system-reset;
-			qcom,store-hard-reset-reason;
 
 			qcom,pon_1 {
 				qcom,pon-type = <0>;
@@ -116,7 +115,7 @@
                         #address-cells = <1>;
                         #size-cells = <1>;
                         qcom,qpnp-rtc-write = <0>;
-                        qcom,qpnp-rtc-alarm-pwrup = <0>;
+                        qcom,qpnp-rtc-alarm-pwrup = <0x1>;
 
                         qcom,pm8916_rtc_rw@6000 {
                                 reg = <0x6000 0x100>;
@@ -137,7 +136,7 @@
 			qcom,adc-bit-resolution = <15>;
 			qcom,adc-vdd-reference = <1800>;
 			qcom,vadc-poll-eoc;
-			qcom,pmic-revid = <&pm8916_revid>;
+			qcom,pmic-revid = <0xea>;
 
 			chan@8 {
 				label = "die_temp";
@@ -180,7 +179,7 @@
 			label = "pm8916_tz";
 			qcom,channel-num = <8>;
 			qcom,threshold-set = <0>;
-			qcom,temp_alarm-vadc = <&pm8916_vadc>;
+			qcom,temp_alarm-vadc = <0xeb>;
 		};
 
 		pm8916_adc_tm: vadc@3400 {
@@ -196,8 +195,7 @@
 						"low-thr-en-set";
 			qcom,adc-bit-resolution = <15>;
 			qcom,adc-vdd-reference = <1800>;
-			qcom,adc_tm-vadc = <&pm8916_vadc>;
-			qcom,pmic-revid = <&pm8916_revid>;
+			qcom,adc_tm-vadc = <0xeb>;
 		};
 
 		pm8916_chg: qcom,charger {
@@ -209,10 +207,12 @@
 			qcom,vddmax-mv = <4200>;
 			qcom,vddsafe-mv = <4200>;
 			qcom,vinmin-mv = <4308>;
-			qcom,ibatsafe-ma = <1440>;
-			qcom,thermal-mitigation = <1440 720 630 0>;
+			qcom,ibatsafe-ma = <0x582>;
+			qcom,thermal-mitigation = <0x582 0x2bc 0x258 0x145>;
 			qcom,cool-bat-decidegc = <100>;
 			qcom,warm-bat-decidegc = <450>;
+			qcom,roomtemp-decidegc = <0xdc>;
+			qcom,ibatmax-roomtemp-ma = <0x582>;
 			qcom,cool-bat-mv = <4100>;
 			qcom,warm-bat-mv = <4100>;
 			qcom,ibatmax-warm-ma = <360>;
@@ -220,9 +220,10 @@
 			qcom,batt-hot-percentage = <25>;
 			qcom,batt-cold-percentage = <80>;
 			qcom,tchg-mins = <232>;
-			qcom,resume-soc = <99>;
-			qcom,chg-vadc = <&pm8916_vadc>;
-			qcom,chg-adc_tm = <&pm8916_adc_tm>;
+			qcom,resume-soc = <0x5f>;
+			qcom,bpd-detection = "bpd_id";
+			qcom,chg-vadc = <0xeb>;
+			qcom,chg-adc_tm = <0xc9>;
 
 			status = "disabled";
 
@@ -268,8 +269,8 @@
 			#size-cells = <1>;
 			status = "disabled";
 
-			qcom,v-cutoff-uv = <3400000>;
-			qcom,max-voltage-uv = <4200000>;
+			qcom,v-cutoff-uv = <0x331df0>;
+			qcom,max-voltage-uv = <0x421210>;
 			qcom,r-conn-mohm = <0>;
 			qcom,shutdown-soc-valid-limit = <100>;
 			qcom,low-soc-calculate-soc-threshold = <15>;
@@ -279,11 +280,10 @@
 			qcom,volatge-soc-timeout-ms = <60000>;
 			qcom,low-voltage-threshold = <3450000>;
 			qcom,s3-ocv-tolerence-uv = <1200>;
-			qcom,s2-fifo-length = <5>;
 			qcom,low-soc-fifo-length = <2>;
-			qcom,bms-vadc = <&pm8916_vadc>;
-			qcom,bms-adc_tm = <&pm8916_adc_tm>;
-			qcom,pmic-revid = <&pm8916_revid>;
+			qcom,bms-vadc = <0xeb>;
+			qcom,bms-adc_tm = <0xc9>;
+			qcom,pmic-revid = <0xea>;
 
 			qcom,force-s3-on-suspend;
 			qcom,force-s2-in-charging;
@@ -552,7 +552,7 @@
 		pm8916_tombak_dig: msm8x16_wcd_codec@f000{
 			compatible = "qcom,wcd-spmi";
 			reg = <0xf000 0x100>;
-			interrupt-parent = <&spmi_bus>;
+			interrupt-parent = <0xed>;
 			interrupts = <0x1 0xf0 0x0>,
 				     <0x1 0xf0 0x1>,
 				     <0x1 0xf0 0x2>,
@@ -570,23 +570,23 @@
 					  "ins_rem_det",
 					  "mbhc_int";
 
-			cdc-vdda-cp-supply = <&pm8916_s4>;
+			cdc-vdda-cp-supply = <0x9b>;
 			qcom,cdc-vdda-cp-voltage = <1800000 2200000>;
 			qcom,cdc-vdda-cp-current = <770000>;
 
-			cdc-vdda-h-supply = <&pm8916_l5>;
+			cdc-vdda-h-supply = <0xb2>;
 			qcom,cdc-vdda-h-voltage = <1800000 1800000>;
 			qcom,cdc-vdda-h-current = <20000>;
 
-			cdc-vdd-px-supply = <&pm8916_s4>;
+			cdc-vdd-px-supply = <0x9b>;
 			qcom,cdc-vdd-px-voltage = <1800000 2200000>;
 			qcom,cdc-vdd-px-current = <770000>;
 
-			cdc-vdd-pa-supply = <&pm8916_l5>;
+			cdc-vdd-pa-supply = <0xb2>;
 			qcom,cdc-vdd-pa-voltage = <1800000 1800000>;
 			qcom,cdc-vdd-pa-current = <5000>;
 
-			cdc-vdd-mic-bias-supply = <&pm8916_l13>;
+			cdc-vdd-mic-bias-supply = <0xb0>;
 			qcom,cdc-vdd-mic-bias-voltage = <3075000 3075000>;
 			qcom,cdc-vdd-mic-bias-current = <25000>;
 
@@ -603,7 +603,7 @@
 		pm8916_tombak_analog: msm8x16_wcd_codec@f100{
 			compatible = "qcom,wcd-spmi";
 			reg = <0xf100 0x100>;
-			interrupt-parent = <&spmi_bus>;
+			interrupt-parent = <0xed>;
 			interrupts = <0x1 0xf1 0x0>,
 				     <0x1 0xf1 0x1>,
 				     <0x1 0xf1 0x2>,

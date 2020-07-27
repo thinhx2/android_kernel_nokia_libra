@@ -32,8 +32,7 @@
 		};
 
 		ext-cdc-tlmm-lines {
-			qcom,pins = <&gp 116>, <&gp 112>, <&gp 117>,
-						<&gp 118>, <&gp 119>;
+			qcom,pins = <0xfe 0x74 0xfe 0x70 0xfe 0x75 0xfe 0x76 0xfe 0x77>;
 			qcom,num-grp-pins = <5>;
 			qcom,pin-func = <1>;
 			label = "ext-cdc-tlmm-lines";
@@ -48,7 +47,7 @@
 		};
 
 		ext-codec-lines {
-			qcom,pins = <&gp 67>;
+			qcom,pins = <0xfe 67>;
 			qcom,num-grp-pins = <1>;
 			qcom,pin-func = <0>;
 			label = "ext-codec-lines";
@@ -64,8 +63,8 @@
 		};
 
 		cdc-pdm-lines {
-			qcom,pins = <&gp 63>, <&gp 64>, <&gp 65>,
-					<&gp 66>, <&gp 67>, <&gp 68>;
+			qcom,pins = <0xfe 63>, <0xfe 64>, <0xfe 65>,
+					<0xfe 66>, <0xfe 67>, <0xfe 68>;
 			qcom,num-grp-pins = <6>;
 			qcom,pin-func = <1>;
 			label = "cdc-pdm-lines";
@@ -80,8 +79,8 @@
 		};
 
 		cdc-ext-pa-lines {
-			qcom,pins = <&gp 113>, <&gp 114>,
-					<&gp 115>, <&gp 116>;
+			qcom,pins = <0xfe 113>, <0xfe 114>,
+					<0xfe 115>, <0xfe 116>;
 			qcom,num-grp-pins = <4>;
 			qcom,pin-func = <1>;
 			label = "cdc-ext-pa-lines";
@@ -96,7 +95,7 @@
 		};
 
 		cdc-ext-pa-ws-line {
-			qcom,pins = <&gp 110>;
+			qcom,pins = <0xfe 110>;
 			qcom,num-grp-pins = <1>;
 			qcom,pin-func = <2>;
 			label = "cdc-ext-pa-ws-line";
@@ -111,7 +110,7 @@
 		};
 
 		cross-conn-det {
-			qcom,pins = <&gp 120>;
+			qcom,pins = <0xfe 120>;
 			qcom,num-grp-pins = <1>;
 			qcom,pin-func = <0>;
 			label = "cross-conn-det-sw";
@@ -125,7 +124,7 @@
 			};
 		};
 		pmx-uartconsole {
-			qcom,pins = <&gp 4>, <&gp 5>;
+			qcom,pins = <0xfe 4>, <0xfe 5>;
 			qcom,num-grp-pins = <2>;
 			qcom,pin-func = <2>;
 			label = "uart-console";
@@ -137,7 +136,7 @@
 		};
 
 		blsp1_uart1_active {
-			qcom,pins = <&gp 0>, <&gp 1>, <&gp 2>, <&gp 3>;
+			qcom,pins = <0xfe 0>, <0xfe 1>, <0xfe 2>, <0xfe 3>;
 			qcom,num-grp-pins = <4>;
 			qcom,pin-func = <2>;
 		        label = "blsp1_uart1_active";
@@ -149,7 +148,7 @@
 		};
 
 		blsp1_uart1_sleep {
-			qcom,pins = <&gp 0>, <&gp 1>, <&gp 2>, <&gp 3>;
+			qcom,pins = <0xfe 0>, <0xfe 1>, <0xfe 2>, <0xfe 3>;
 			qcom,num-grp-pins = <4>;
 			qcom,pin-func = <0>;
 		        label = "blsp1_uart1_sleep";
@@ -161,8 +160,8 @@
 		};
 
 		sdhc2_cd_pin {
-			qcom,pins = <&gp 38>;
-			qcom,num-grp-pins = <1>;
+			qcom,pins = <0xfe 38>;
+			qcom,num-grp-pins = <0x0>;
 			qcom,pin-func = <0>;
 			label = "cd-gpio";
 			sdc2_cd_on: cd_on {
@@ -187,7 +186,7 @@
 		};
 
 		pmx_sdc1_clk {
-			qcom,pins = <&sdc 0>;
+			qcom,pins = <0xff 0>;
 			qcom,num-grp-pins = <1>;
 			label = "sdc1-clk";
 			sdc1_clk_on: clk_on {
@@ -201,7 +200,7 @@
 		};
 
 		pmx_sdc1_cmd {
-			qcom,pins = <&sdc 1>;
+			qcom,pins = <0xff 1>;
 			qcom,num-grp-pins = <1>;
 			label = "sdc1-cmd";
 			sdc1_cmd_on: cmd_on {
@@ -215,7 +214,7 @@
 		};
 
 		pmx_sdc1_data {
-			qcom,pins = <&sdc 2>;
+			qcom,pins = <0xff 2>;
 			qcom,num-grp-pins = <1>;
 			label = "sdc1-data";
 			sdc1_data_on: data_on {
@@ -229,7 +228,7 @@
 		};
 
 		pmx_sdc2_clk {
-			qcom,pins = <&sdc 4>;
+			qcom,pins = <0xff 4>;
 			qcom,num-grp-pins = <1>;
 			label = "sdc2-clk";
 			sdc2_clk_on: clk_on {
@@ -243,7 +242,7 @@
 		};
 
 		pmx_sdc2_cmd {
-			qcom,pins = <&sdc 5>;
+			qcom,pins = <0xff 5>;
 			qcom,num-grp-pins = <1>;
 			label = "sdc2-cmd";
 			sdc2_cmd_on: cmd_on {
@@ -257,7 +256,7 @@
 		};
 
 		pmx_sdc2_data {
-			qcom,pins = <&sdc 6>;
+			qcom,pins = <0xff 6>;
 			qcom,num-grp-pins = <1>;
 			label = "sdc2-data";
 			sdc2_data_on: data_on {
@@ -271,7 +270,7 @@
 		};
 
 		usb-id-pin {
-			qcom,pins = <&gp 110>;
+			qcom,pins = <0xfe 110>;
 			qcom,num-grp-pins = <1>;
 			qcom,pin-func = <0>;
 			label = "usb-id-pin";
@@ -283,7 +282,7 @@
 
 		spi0_active {
 			/* MOSI, MISO, CLK */
-			qcom,pins = <&gp 8>, <&gp 9>, <&gp 11>;
+			qcom,pins = <0xfe 8>, <0xfe 9>, <0xfe 11>;
 			qcom,num-grp-pins = <3>;
 			qcom,pin-func = <1>;
 			label = "spi0-active";
@@ -296,7 +295,7 @@
 
 		spi0_suspend {
 			/* MOSI, MISO, CLK */
-			qcom,pins = <&gp 8>, <&gp 9>, <&gp 11>;
+			qcom,pins = <0xfe 8>, <0xfe 9>, <0xfe 11>;
 			qcom,num-grp-pins = <3>;
 			qcom,pin-func = <0>;
 			label = "spi0-suspend";
@@ -308,8 +307,8 @@
 		};
 		spi0_cs0_active {
 			/* CS */
-			qcom,pins = <&gp 10>;
-			qcom,num-grp-pins = <1>;
+			qcom,pins = <0xfe 10>;
+			qcom,num-grp-pins = <0x0>;
 			qcom,pin-func = <1>;
 			label = "spi0-cs0-active";
 			spi0_cs0_active: cs0_active {
@@ -321,8 +320,8 @@
 
 		spi0_cs0_suspend {
 			/* CS */
-			qcom,pins = <&gp 10>;
-			qcom,num-grp-pins = <1>;
+			qcom,pins = <0xfe 10>;
+			qcom,num-grp-pins = <0x0>;
 			qcom,pin-func = <0>;
 			label = "spi0-cs0-suspend";
 			spi0_cs0_sleep: cs0_sleep {
@@ -332,7 +331,7 @@
 		};
 
 		ice40-spi-usb-pins {
-			qcom,pins = <&gp 0>, <&gp 1>, <&gp 3>, <&gp 114>;
+			qcom,pins = <0xfe 0>, <0xfe 1>, <0xfe 3>, <0xfe 114>;
 			qcom,num-grp-pins = <4>;
 			qcom,pin-func = <0>;
 			label = "ice40-spi-usb-pins";
@@ -353,7 +352,7 @@
 
 		pmx_i2c_0 {
 			/* CLK, DATA */
-			qcom,pins = <&gp 7>, <&gp 6>;
+			qcom,pins = <0xfe 7>, <0xfe 6>;
 			qcom,num-grp-pins = <2>;
 			qcom,pin-func = <3>;
 			label = "pmx_i2c_0";
@@ -371,7 +370,7 @@
 
 		pmx_i2c_5 {
 			/* CLK, DATA */
-			qcom,pins = <&gp 19>, <&gp 18>;
+			qcom,pins = <0xfe 19>, <0xfe 18>;
 			qcom,num-grp-pins = <2>;
 			qcom,pin-func = <2>;
 			label = "pmx_i2c_5";
@@ -397,7 +396,7 @@
 		};
 
 		pmx_qdsd_clk {
-			qcom,pins = <&qdsd 0>;
+			qcom,pins = <0x100 0>;
 			qcom,num-grp-pins = <1>;
 			label = "qdsd-clk";
 			qdsd_clk_sdcard: clk_sdcard {
@@ -419,7 +418,7 @@
 		};
 
 		pmx_qdsd_cmd {
-			qcom,pins = <&qdsd 1>;
+			qcom,pins = <0x100 1>;
 			qcom,num-grp-pins = <1>;
 			label = "qdsd-cmd";
 			qdsd_cmd_sdcard: cmd_sdcard {
@@ -449,7 +448,7 @@
 		};
 
 		pmx_qdsd_data0 {
-			qcom,pins = <&qdsd 2>;
+			qcom,pins = <0x100 2>;
 			qcom,num-grp-pins = <1>;
 			label = "qdsd-data0";
 			qdsd_data0_sdcard: data0_sdcard {
@@ -479,7 +478,7 @@
 		};
 
 		pmx_qdsd_data1 {
-			qcom,pins = <&qdsd 3>;
+			qcom,pins = <0x100 3>;
 			qcom,num-grp-pins = <1>;
 			label = "qdsd-data1";
 			qdsd_data1_sdcard: data1_sdcard {
@@ -505,7 +504,7 @@
 		};
 
 		pmx_qdsd_data2 {
-			qcom,pins = <&qdsd 4>;
+			qcom,pins = <0x100 4>;
 			qcom,num-grp-pins = <1>;
 			label = "qdsd-data2";
 			qdsd_data2_sdcard: data2_sdcard {
@@ -531,7 +530,7 @@
 		};
 
 		pmx_qdsd_data3 {
-			qcom,pins = <&qdsd 5>;
+			qcom,pins = <0x100 5>;
 			qcom,num-grp-pins = <1>;
 			label = "qdsd-data3";
 			qdsd_data3_sdcard: data3_sdcard {
@@ -577,9 +576,9 @@
 
 		wcnss_pmux_5wire: wcnss_pmux_5wire {
 			/* Uses general purpose pins */
-			qcom,pins = <&gp 40>, <&gp 41>,
-				    <&gp 42>, <&gp 43>,
-				    <&gp 44>;
+			qcom,pins = <0xfe 40>, <0xfe 41>,
+				    <0xfe 42>, <0xfe 43>,
+				    <0xfe 44>;
 			qcom,num-grp-pins = <5>;
 			qcom,pin-func = <1>;
 			label = "wcnss_5wire_pins";
@@ -596,9 +595,9 @@
 
 		wcnss_pmux_gpio: wcnss_pmux_gpio {
 			/* Uses general purpose pins */
-			qcom,pins = <&gp 40>, <&gp 41>,
-				    <&gp 42>, <&gp 43>,
-				    <&gp 44>;
+			qcom,pins = <0xfe 40>, <0xfe 41>,
+				    <0xfe 42>, <0xfe 43>,
+				    <0xfe 44>;
 			qcom,num-grp-pins = <5>;
 			qcom,pin-func = <0>;
 			label = "wcnss_5gpio_pins";
@@ -611,7 +610,7 @@
 
 		pmx_i2c_6 {
 			/* CLK, DATA */
-			qcom,pins = <&gp 22>, <&gp 23>;
+			qcom,pins = <0xfe 22>, <0xfe 23>;
 			qcom,num-grp-pins = <2>;
 			qcom,pin-func = <2>;
 			label = "pmx_i2c_6";
@@ -628,7 +627,7 @@
 		};
 
 		pmx_rd_nfc_int{
-			qcom,pins = <&gp 21>;
+			qcom,pins = <0xfe 21>;
 			qcom,pin-func = <0>;
 			qcom,num-grp-pins = <1>;
 			label = "pmx_nfc_int";
@@ -645,7 +644,7 @@
 		};
 
 		pmx_nfc_reset{
-			qcom,pins = <&gp 20>;
+			qcom,pins = <0xfe 20>;
 			qcom,pin-func = <0>;
 			qcom,num-grp-pins = <1>;
 			label = "pmx_nfc_disable";
@@ -678,7 +677,7 @@
 
 		/* CoreSight */
 		tpiu_seta_1 {
-			qcom,pins = <&gp 8>;
+			qcom,pins = <0xfe 8>;
 			qcom,num-grp-pins = <1>;
 			qcom,pin-func = <3>;
 			label = "tpiu-seta-1";
@@ -689,7 +688,7 @@
 		};
 
 		tpiu_seta_2 {
-			qcom,pins = <&gp 9>;
+			qcom,pins = <0xfe 9>;
 			qcom,num-grp-pins = <1>;
 			qcom,pin-func = <2>;
 			label = "tpiu-seta-2";
@@ -700,7 +699,7 @@
 		};
 
 		tpiu_seta_3 {
-			qcom,pins = <&gp 10>;
+			qcom,pins = <0xfe 10>;
 			qcom,num-grp-pins = <1>;
 			qcom,pin-func = <3>;
 			label = "tpiu-seta-3";
@@ -711,7 +710,7 @@
 		};
 
 		tpiu_seta_4 {
-			qcom,pins = <&gp 39>;
+			qcom,pins = <0xfe 39>;
 			qcom,num-grp-pins = <1>;
 			qcom,pin-func = <2>;
 			label = "tpiu-seta-4";
@@ -722,7 +721,7 @@
 		};
 
 		tpiu_seta_5 {
-			qcom,pins = <&gp 40>;
+			qcom,pins = <0xfe 40>;
 			qcom,num-grp-pins = <1>;
 			qcom,pin-func = <2>;
 			label = "tpiu-seta-5";
@@ -733,7 +732,7 @@
 		};
 
 		tpiu_seta_6 {
-			qcom,pins = <&gp 41>;
+			qcom,pins = <0xfe 41>;
 			qcom,num-grp-pins = <1>;
 			qcom,pin-func = <2>;
 			label = "tpiu-seta-6";
@@ -744,7 +743,7 @@
 		};
 
 		tpiu_seta_7 {
-			qcom,pins = <&gp 42>;
+			qcom,pins = <0xfe 42>;
 			qcom,num-grp-pins = <1>;
 			qcom,pin-func = <2>;
 			label = "tpiu-seta-7";
@@ -755,7 +754,7 @@
 		};
 
 		tpiu_seta_8 {
-			qcom,pins = <&gp 43>;
+			qcom,pins = <0xfe 43>;
 			qcom,num-grp-pins = <1>;
 			qcom,pin-func = <3>;
 			label = "tpiu-seta-8";
@@ -766,7 +765,7 @@
 		};
 
 		tpiu_seta_9 {
-			qcom,pins = <&gp 45>;
+			qcom,pins = <0xfe 45>;
 			qcom,num-grp-pins = <1>;
 			qcom,pin-func = <3>;
 			label = "tpiu-seta-9";
@@ -777,7 +776,7 @@
 		};
 
 		tpiu_seta_10 {
-			qcom,pins = <&gp 46>;
+			qcom,pins = <0xfe 46>;
 			qcom,num-grp-pins = <1>;
 			qcom,pin-func = <2>;
 			label = "tpiu-seta-10";
@@ -788,7 +787,7 @@
 		};
 
 		tpiu_seta_11 {
-			qcom,pins = <&gp 47>;
+			qcom,pins = <0xfe 47>;
 			qcom,num-grp-pins = <1>;
 			qcom,pin-func = <3>;
 			label = "tpiu-seta-11";
@@ -799,7 +798,7 @@
 		};
 
 		tpiu_seta_12 {
-			qcom,pins = <&gp 48>;
+			qcom,pins = <0xfe 48>;
 			qcom,num-grp-pins = <1>;
 			qcom,pin-func = <2>;
 			label = "tpiu-seta-12";
@@ -810,7 +809,7 @@
 		};
 
 		tpiu_seta_13 {
-			qcom,pins = <&gp 62>;
+			qcom,pins = <0xfe 62>;
 			qcom,num-grp-pins = <1>;
 			qcom,pin-func = <2>;
 			label = "tpiu-seta-13";
@@ -821,7 +820,7 @@
 		};
 
 		tpiu_seta_14 {
-			qcom,pins = <&gp 69>;
+			qcom,pins = <0xfe 69>;
 			qcom,num-grp-pins = <1>;
 			qcom,pin-func = <2>;
 			label = "tpiu-seta-14";
@@ -832,7 +831,7 @@
 		};
 
 		tpiu_seta_15 {
-			qcom,pins = <&gp 112>;
+			qcom,pins = <0xfe 112>;
 			qcom,num-grp-pins = <1>;
 			qcom,pin-func = <5>;
 			label = "tpiu-seta-15";
@@ -843,7 +842,7 @@
 		};
 
 		tpiu_seta_16 {
-			qcom,pins = <&gp 113>;
+			qcom,pins = <0xfe 113>;
 			qcom,num-grp-pins = <1>;
 			qcom,pin-func = <9>;
 			label = "tpiu-seta-16";
@@ -854,7 +853,7 @@
 		};
 
 		tpiu_seta_17 {
-			qcom,pins = <&gp 114>;
+			qcom,pins = <0xfe 114>;
 			qcom,num-grp-pins = <1>;
 			qcom,pin-func = <8>;
 			label = "tpiu-seta-17";
@@ -865,7 +864,7 @@
 		};
 
 		tpiu_seta_18 {
-			qcom,pins = <&gp 115>;
+			qcom,pins = <0xfe 115>;
 			qcom,num-grp-pins = <1>;
 			qcom,pin-func = <8>;
 			label = "tpiu-seta-18";
@@ -876,7 +875,7 @@
 		};
 
 		tpiu_setb_1 {
-			qcom,pins = <&gp 4>;
+			qcom,pins = <0xfe 4>;
 			qcom,num-grp-pins = <1>;
 			qcom,pin-func = <5>;
 			label = "tpiu-setb-1";
@@ -887,7 +886,7 @@
 		};
 
 		tpiu_setb_2 {
-			qcom,pins = <&gp 5>;
+			qcom,pins = <0xfe 5>;
 			qcom,num-grp-pins = <1>;
 			qcom,pin-func = <5>;
 			label = "tpiu-setb-2";
@@ -898,7 +897,7 @@
 		};
 
 		tpiu_setb_3 {
-			qcom,pins = <&gp 26>;
+			qcom,pins = <0xfe 26>;
 			qcom,num-grp-pins = <1>;
 			qcom,pin-func = <7>;
 			label = "tpiu-setb-3";
@@ -909,7 +908,7 @@
 		};
 
 		tpiu_setb_4 {
-			qcom,pins = <&gp 27>;
+			qcom,pins = <0xfe 27>;
 			qcom,num-grp-pins = <1>;
 			qcom,pin-func = <9>;
 			label = "tpiu-setb-4";
@@ -920,7 +919,7 @@
 		};
 
 		tpiu_setb_5 {
-			qcom,pins = <&gp 28>;
+			qcom,pins = <0xfe 28>;
 			qcom,num-grp-pins = <1>;
 			qcom,pin-func = <7>;
 			label = "tpiu-setb-5";
@@ -931,7 +930,7 @@
 		};
 
 		tpiu_setb_6 {
-			qcom,pins = <&gp 29>;
+			qcom,pins = <0xfe 29>;
 			qcom,num-grp-pins = <1>;
 			qcom,pin-func = <7>;
 			label = "tpiu-setb-6";
@@ -942,7 +941,7 @@
 		};
 
 		tpiu_setb_7 {
-			qcom,pins = <&gp 30>;
+			qcom,pins = <0xfe 30>;
 			qcom,num-grp-pins = <1>;
 			qcom,pin-func = <9>;
 			label = "tpiu-setb-7";
@@ -953,7 +952,7 @@
 		};
 
 		tpiu_setb_8 {
-			qcom,pins = <&gp 31>;
+			qcom,pins = <0xfe 31>;
 			qcom,num-grp-pins = <1>;
 			qcom,pin-func = <10>;
 			label = "tpiu-setb-8";
@@ -964,7 +963,7 @@
 		};
 
 		tpiu_setb_9 {
-			qcom,pins = <&gp 32>;
+			qcom,pins = <0xfe 32>;
 			qcom,num-grp-pins = <1>;
 			qcom,pin-func = <10>;
 			label = "tpiu-setb-9";
@@ -975,7 +974,7 @@
 		};
 
 		tpiu_setb_10 {
-			qcom,pins = <&gp 33>;
+			qcom,pins = <0xfe 33>;
 			qcom,num-grp-pins = <1>;
 			qcom,pin-func = <9>;
 			label = "tpiu-setb-10";
@@ -986,7 +985,7 @@
 		};
 
 		tpiu_setb_11 {
-			qcom,pins = <&gp 34>;
+			qcom,pins = <0xfe 34>;
 			qcom,num-grp-pins = <1>;
 			qcom,pin-func = <9>;
 			label = "tpiu-setb-11";
@@ -997,7 +996,7 @@
 		};
 
 		tpiu_setb_12 {
-			qcom,pins = <&gp 35>;
+			qcom,pins = <0xfe 35>;
 			qcom,num-grp-pins = <1>;
 			qcom,pin-func = <9>;
 			label = "tpiu-setb-12";
@@ -1008,7 +1007,7 @@
 		};
 
 		tpiu_setb_13 {
-			qcom,pins = <&gp 36>;
+			qcom,pins = <0xfe 36>;
 			qcom,num-grp-pins = <1>;
 			qcom,pin-func = <8>;
 			label = "tpiu-setb-13";
@@ -1019,7 +1018,7 @@
 		};
 
 		tpiu_setb_14 {
-			qcom,pins = <&gp 37>;
+			qcom,pins = <0xfe 37>;
 			qcom,num-grp-pins = <1>;
 			qcom,pin-func = <7>;
 			label = "tpiu-setb-14";
@@ -1030,7 +1029,7 @@
 		};
 
 		tpiu_setb_15 {
-			qcom,pins = <&gp 110>;
+			qcom,pins = <0xfe 110>;
 			qcom,num-grp-pins = <1>;
 			qcom,pin-func = <4>;
 			label = "tpiu-setb-15";
@@ -1041,7 +1040,7 @@
 		};
 
 		tpiu_setb_16 {
-			qcom,pins = <&gp 111>;
+			qcom,pins = <0xfe 111>;
 			qcom,num-grp-pins = <1>;
 			qcom,pin-func = <1>;
 			label = "tpiu-setb-16";
@@ -1052,7 +1051,7 @@
 		};
 
 		tpiu_setb_17 {
-			qcom,pins = <&gp 120>;
+			qcom,pins = <0xfe 120>;
 			qcom,num-grp-pins = <1>;
 			qcom,pin-func = <10>;
 			label = "tpiu-setb-17";
@@ -1063,7 +1062,7 @@
 		};
 
 		tpiu_setb_18 {
-			qcom,pins = <&gp 121>;
+			qcom,pins = <0xfe 121>;
 			qcom,num-grp-pins = <1>;
 			qcom,pin-func = <11>;
 			label = "tpiu-setb-18";
@@ -1074,9 +1073,9 @@
 		};
 
 		tlmm_gpio_key {
-			qcom,pins = <&gp 107>, <&gp 108>, <&gp 109>;
+			qcom,pins = <0xfe 107>, <0xfe 108>, <0xfe 109>;
 			qcom,pin-func = <0>;
-			qcom,num-grp-pins = <3>;
+			qcom,num-grp-pins = <0x1>;
 			label = "tlmm_gpio_key";
 			gpio_key_active: gpio_key_active {
 				drive-strength = <2>;
@@ -1089,7 +1088,7 @@
 		};
 
 		gpio_led_pins {
-			qcom,pins = <&gp 8>, <&gp 9>, <&gp 10>;
+			qcom,pins = <0xfe 8>, <0xfe 9>, <0xfe 10>;
 			qcom,num-grp-pins = <3>;
 			label = "gpio-led-pins";
 			gpio_led_off: led_off {
@@ -1101,7 +1100,7 @@
 
 		/* add pingrp for touchscreen */
 		pmx_ts_int_active {
-			qcom,pins = <&gp 13>;
+			qcom,pins = <0xfe 13>;
 			qcom,pin-func = <0>;
 			qcom,num-grp-pins = <1>;
 			label = "pmx_ts_int_active";
@@ -1113,7 +1112,7 @@
 		};
 
 		pmx_ts_int_suspend {
-			qcom,pins = <&gp 13>;
+			qcom,pins = <0xfe 13>;
 			qcom,pin-func = <0>;
 			qcom,num-grp-pins = <1>;
 			label = "pmx_ts_int_suspend";
@@ -1125,7 +1124,7 @@
 		};
 
 		pmx_ts_reset_active {
-			qcom,pins = <&gp 12>;
+			qcom,pins = <0xfe 12>;
 			qcom,pin-func = <0>;
 			qcom,num-grp-pins = <1>;
 			label = "pmx_ts_reset_active";
@@ -1137,7 +1136,7 @@
 		};
 
 		pmx_ts_reset_suspend {
-			qcom,pins = <&gp 12>;
+			qcom,pins = <0xfe 12>;
 			qcom,pin-func = <0>;
 			qcom,num-grp-pins = <1>;
 			label = "pmx_ts_reset_suspend";
@@ -1148,20 +1147,9 @@
 			};
 		};
 
-		pmx_ts_release {
-			qcom,pins = <&gp 13>, <&gp 12>;
-			qcom,num-grp-pins = <2>;
-			label = "pmx_ts_release";
-
-			ts_release: ts_release {
-				drive-strength = <2>;
-				bias-pull-down;
-			};
-		};
-
 		cci0_pinmux {
 			/* CLK, DATA */
-			qcom,pins = <&gp 29>, <&gp 30>;
+			qcom,pins = <0xfe 29>, <0xfe 30>;
 			qcom,num-grp-pins = <2>;
 			qcom,pin-func = <1>;
 			label = "cci0";
@@ -1179,7 +1167,7 @@
 
 		cam_sensor_mclk0 {
 			/* MCLK */
-			qcom,pins = <&gp 26>;
+			qcom,pins = <0xfe 26>;
 			qcom,num-grp-pins = <1>;
 			qcom,pin-func = <1>;
 			label = "cam-sensor-mclk0";
@@ -1192,7 +1180,7 @@
 
 		cam_sensor_mclk0_sleep {
 			/* MCLK */
-			qcom,pins = <&gp 26>;
+			qcom,pins = <0xfe 26>;
 			qcom,num-grp-pins = <1>;
 			label = "cam-sensor-mclk0-sleep";
 			/* suspend state */
@@ -1204,7 +1192,7 @@
 
 		cam_sensor_mclk1 {
 			/* MCLK */
-			qcom,pins = <&gp 27>;
+			qcom,pins = <0xfe 27>;
 			qcom,num-grp-pins = <1>;
 			qcom,pin-func = <1>;
 			label = "cam-sensor-mclk1";
@@ -1217,7 +1205,7 @@
 
 		cam_sensor_mclk1_sleep {
 			/* MCLK */
-			qcom,pins = <&gp 27>;
+			qcom,pins = <0xfe 27>;
 			qcom,num-grp-pins = <1>;
 			label = "cam-sensor-mclk1-sleep";
 			/* suspend state */
@@ -1229,7 +1217,7 @@
 
 		cam_sensor_rear {
 			/* RESET, STANDBY */
-			qcom,pins =  <&gp 35>, <&gp 34>;
+			qcom,pins =  <0xfe 35>, <0xfe 34>;
 			qcom,num-grp-pins = <2>;
 			qcom,pin-func = <0>;
 			label = "cam-sensor-rear";
@@ -1242,7 +1230,7 @@
 
 		cam_sensor_rear_sleep {
 			/* RESET, STANDBY */
-			qcom,pins =  <&gp 35>, <&gp 34>;
+			qcom,pins =  <0xfe 35>, <0xfe 34>;
 			qcom,num-grp-pins = <2>;
 			qcom,pin-func = <0>;
 			label = "cam-sensor-rear-sleep";
@@ -1255,7 +1243,7 @@
 
 		cam_sensor_front {
 			/* RESET, STANDBY */
-			qcom,pins = <&gp 28>, <&gp 33>;
+			qcom,pins = <0xfe 28>, <0xfe 33>;
 			qcom,num-grp-pins = <2>;
 			qcom,pin-func = <0>;
 			label = "cam_sensor_front";
@@ -1268,10 +1256,10 @@
 
 		cam_sensor_front_sleep {
 			/* RESET, STANDBY */
-			qcom,pins = <&gp 28>, <&gp 33>;
+			qcom,pins = <0xfe 28>, <0xfe 33>;
 			qcom,num-grp-pins = <2>;
 			qcom,pin-func = <0>;
-			label = "cam_sensor_front_sleep";
+			label = "cam_sensor_front";
 			/*suspended state */
 			cam_sensor_front_sleep: sleep {
 				drive-strength = <2>; /* 2 MA */
@@ -1281,7 +1269,7 @@
 
 		cam_sensor_flash {
 			/* FLSH_RESET,FLASH_EN,FLASH_NOW */
-			qcom,pins = <&gp 36>, <&gp 31>,<&gp 32> ;
+			qcom,pins = <0xfe 36>, <0xfe 31>,<0xfe 32> ;
 			qcom,num-grp-pins = <3>;
 			qcom,pin-func = <0>;
 			label = "cam_sensor_flash";
@@ -1299,7 +1287,7 @@
 
 		pmx_i2c_4 {
 			/* CLK, DATA */
-			qcom,pins = <&gp 14>, <&gp 15>;
+			qcom,pins = <0xfe 14>, <0xfe 15>;
 			qcom,num-grp-pins = <2>;
 			qcom,pin-func = <2>;
 			label = "pmx_i2c_4";
@@ -1317,7 +1305,7 @@
 		};
 
 		smb_int_pin {
-			qcom,pins = <&gp 62>;
+			qcom,pins = <0xfe 62>;
 			qcom,num-grp-pins = <1>;
 			qcom,pin-func = <0>;
 			label = "smb1360_int_gpio";
@@ -1328,7 +1316,7 @@
 		};
 
 		button_backlight_pin {
-			qcom,pins = <&gp 119>;
+			qcom,pins = <0xfe 119>;
 			qcom,num-grp-pins = <1>;
 			qcom,pin-func = <0>;
 			label = "button-backlight-pin";
@@ -1340,7 +1328,7 @@
 		};
 
 		mpu6050_int_pin {
-			qcom,pins = <&gp 115>;
+			qcom,pins = <0xfe 115>;
 			qcom,pin-func = <0>;
 			qcom,num-grp-pins = <1>;
 			label = "mpu6050-irq";
@@ -1354,7 +1342,7 @@
 		};
 
 		apds99xx_int_pin {
-			qcom,pins = <&gp 113>;
+			qcom,pins = <0xfe 113>;
 			qcom,pin-func = <0>;
 			qcom,num-grp-pins = <1>;
 			label = "apds99xx-irq";
@@ -1368,7 +1356,7 @@
 			};
 		};
 		ak8963_int_pin {
-			qcom,pins = <&gp 69>;
+			qcom,pins = <0xfe 69>;
 			qcom,pin-func = <0>;
 			qcom,num-grp-pins = <1>;
 			label = "ak8963-irq";

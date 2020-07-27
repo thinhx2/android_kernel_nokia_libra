@@ -26,31 +26,40 @@
 			qcom,ion-heap-type = "SYSTEM_CONTIG";
 		};
 
+		qcom,ion-heap@8 {
+			compatible = "qcom,msm-ion-reserve";
+			reg = <0x8>;
+			qcom,heap-align = <0x1000>;
+			linux,contiguous-region = <0x106>;
+			qcom,ion-heap-type = "SECURE_DMA";
+		};
+
+
 		qcom,ion-heap@27 { /* QSEECOM HEAP */
 			compatible = "qcom,msm-ion-reserve";
 			reg = <27>;
-			linux,contiguous-region = <&venus_qseecom_mem>;
+			linux,contiguous-region = <0xef>;
 			qcom,ion-heap-type = "DMA";
 		};
 
 		qcom,ion-heap@28 { /* AUDIO HEAP */
                         compatible = "qcom,msm-ion-reserve";
                         reg = <28>;
-                        linux,contiguous-region = <&audio_mem>;
+                        linux,contiguous-region = <0x107>;
                         qcom,ion-heap-type = "DMA";
 		};
 
 		qcom,ion-heap@23 { /* OTHER PIL HEAP */
 			compatible = "qcom,msm-ion-reserve";
 			reg = <23>;
-			linux,contiguous-region = <&peripheral_mem>;
+			linux,contiguous-region = <0xfa>;
 			qcom,ion-heap-type = "DMA";
 		};
 
 		qcom,ion-heap@26 { /* MODEM HEAP */
 			compatible = "qcom,msm-ion-reserve";
 			reg = <26>;
-			linux,contiguous-region = <&modem_adsp_mem>;
+			linux,contiguous-region = <0xf3>;
 			qcom,ion-heap-type = "DMA";
 		};
 	};
