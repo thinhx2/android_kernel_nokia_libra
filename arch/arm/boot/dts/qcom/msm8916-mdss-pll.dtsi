@@ -20,10 +20,10 @@
 		reg = <0x1a98300 0xd4>;
 		reg-names = "pll_base";
 
-		gdsc-supply = <&gdsc_mdss>;
-		vddio-supply = <&pm8916_l6>;
+		gdsc-supply = <0x1c>;
+		vddio-supply = <0x23>;
 
-		clocks = <&clock_gcc clk_gcc_mdss_ahb_clk>;
+		clocks = <0x19 0xbfb92ed3>;
 		clock-names = "iface_clk";
 		clock-rate = <0>;
 
