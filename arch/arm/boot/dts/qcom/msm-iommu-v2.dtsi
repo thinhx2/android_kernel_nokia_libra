@@ -22,8 +22,7 @@
 		interrupt-names = "global_cfg_NS_irq", "global_cfg_S_irq";
 		label = "gfx_iommu";
 		qcom,iommu-secure-id = <18>;
-		clocks = <&clock_gcc clk_gcc_smmu_cfg_clk>,
-			 <&clock_gcc clk_gcc_gfx_tcu_clk>;
+		clocks = <0x19 0x75eaefa5 0x19 0x59505e55>;
 		clock-names = "iface_clk", "core_clk";
 		status = "disabled";
 
@@ -56,8 +55,7 @@
 		interrupt-names = "global_cfg_NS_irq", "global_cfg_S_irq";
 		label = "apps_iommu";
 		qcom,iommu-secure-id = <17>;
-		clocks = <&clock_gcc clk_gcc_smmu_cfg_clk>,
-			 <&clock_gcc clk_gcc_apss_tcu_clk>;
+		clocks = <0x19 0x75eaefa5 0x19 0xaf56a329>;
 		clock-names = "iface_clk", "core_clk";
 		qcom,cb-base-offset = <0x20000>;
 		status = "disabled";
