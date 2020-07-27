@@ -39,7 +39,7 @@
 
 	qcom,smp2pgpio_test_smp2p_7_in {
 		compatible = "qcom,smp2pgpio_test_smp2p_7_in";
-		gpios = <&smp2pgpio_smp2p_7_in 0 0>;
+		gpios = <0x13 0x0 0x0>;
 	};
 
 	smp2pgpio_smp2p_7_out: qcom,smp2pgpio-smp2p-7-out {
@@ -54,7 +54,7 @@
 
 	qcom,smp2pgpio_test_smp2p_7_out {
 		compatible = "qcom,smp2pgpio_test_smp2p_7_out";
-		gpios = <&smp2pgpio_smp2p_7_out 0 0>;
+		gpios = <0x14 0x0 0x0>;
 	};
 
 	smp2pgpio_smp2p_1_in: qcom,smp2pgpio-smp2p-1-in {
@@ -70,7 +70,7 @@
 
 	qcom,smp2pgpio_test_smp2p_1_in {
 		compatible = "qcom,smp2pgpio_test_smp2p_1_in";
-		gpios = <&smp2pgpio_smp2p_1_in 0 0>;
+		gpios = <0x15 0x0 0x0>;
 	};
 
 	smp2pgpio_smp2p_1_out: qcom,smp2pgpio-smp2p-1-out {
@@ -85,7 +85,7 @@
 
 	qcom,smp2pgpio_test_smp2p_1_out {
 		compatible = "qcom,smp2pgpio_test_smp2p_1_out";
-		gpios = <&smp2pgpio_smp2p_1_out 0 0>;
+		gpios = <0x16 0x0 0x0>;
 	};
 
 	smp2pgpio_ssr_smp2p_1_in: qcom,smp2pgpio-ssr-smp2p-1-in {
@@ -122,7 +122,7 @@
 
 	qcom,smp2pgpio_test_smp2p_4_in {
 		compatible = "qcom,smp2pgpio_test_smp2p_4_in";
-		gpios = <&smp2pgpio_smp2p_4_in 0 0>;
+		gpios = <0x17 0x0 0x0>;
 	};
 
 	smp2pgpio_smp2p_4_out: qcom,smp2pgpio-smp2p-4-out {
@@ -137,7 +137,7 @@
 
 	qcom,smp2pgpio_test_smp2p_4_out {
 		compatible = "qcom,smp2pgpio_test_smp2p_4_out";
-		gpios = <&smp2pgpio_smp2p_4_out 0 0>;
+		gpios = <0x18 0x0 0x0>;
 	};
 
 	smp2pgpio_ssr_smp2p_4_in: qcom,smp2pgpio-ssr-smp2p-4-in {
