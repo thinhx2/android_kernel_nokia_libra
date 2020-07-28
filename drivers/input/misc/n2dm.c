@@ -1418,7 +1418,7 @@ static struct attribute_group n2dm_accel_attribute_group = {
     .attrs = n2dm_accel_attributes
 };
 
-static int __devinit n2dm_accel_probe(struct i2c_client *client, const struct i2c_device_id *id)
+static int n2dm_accel_probe(struct i2c_client *client, const struct i2c_device_id *id)
 {
     struct n2dm_accel_driver *acceld;
     struct n2dm_accel_platform_data *accel_pdata;
@@ -1666,7 +1666,7 @@ static struct i2c_driver n2dm_acc_driver = {
             .of_match_table = n2dm_acc_match,
           },
     .probe = n2dm_accel_probe,
-    .remove = __devexit_p(n2dm_accel_remove),
+    .remove = n2dm_accel_remove,
     .suspend = n2dm_accel_suspend,
     .resume = n2dm_accel_resume,
     .id_table = n2dm_acc_id,

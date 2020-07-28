@@ -3087,7 +3087,7 @@ exit:
     return err;
 }
 
-static int __devexit bma2x2_remove(struct i2c_client *client)
+static int bma2x2_remove(struct i2c_client *client)
 {
     struct bma2x2_data *data = i2c_get_clientdata(client);
 
@@ -3144,7 +3144,7 @@ static struct i2c_driver bma2x2_driver = {
     .resume        = bma2x2_resume,
     .id_table    = bma2x2_id,
     .probe        = bma2x2_probe,
-    .remove        = __devexit_p(bma2x2_remove),
+    .remove        = bma2x2_remove,
 
 };
 

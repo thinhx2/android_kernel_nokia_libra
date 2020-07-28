@@ -937,7 +937,7 @@ static void kionix_accel_input_ddtap_close(struct input_dev *dev)
     ;
 }
 
-static int __devinit kionix_accel_setup_input_device(struct kionix_accel_driver *acceld)
+static int kionix_accel_setup_input_device(struct kionix_accel_driver *acceld)
 {
     struct input_dev *input_dev, *input_dev_ddtap;
     int err;
@@ -1602,7 +1602,7 @@ static struct attribute_group kionix_accel_attribute_group = {
     .attrs = kionix_accel_attributes
 };
 
-static int __devinit kionix_hw_init(struct kionix_accel_driver *acceld)
+static int kionix_hw_init(struct kionix_accel_driver *acceld)
 {
     int retval = kionix_accel_i2c_read_byte_data(acceld->client, ACCEL_WHO_AM_I);
 
@@ -1637,7 +1637,7 @@ static int __devinit kionix_hw_init(struct kionix_accel_driver *acceld)
     return retval;
 }
 
-static int __devinit kionix_accel_probe(struct i2c_client *client, const struct i2c_device_id *id)
+static int kionix_accel_probe(struct i2c_client *client, const struct i2c_device_id *id)
 {
     struct kionix_accel_platform_data *accel_pdata;
     struct kionix_accel_driver *acceld;
@@ -1908,7 +1908,7 @@ static struct i2c_driver kionix_accel_driver = {
         .of_match_table = kionix_acc_of_match,
     },
     .probe       = kionix_accel_probe,
-    .remove      = __devexit_p(kionix_accel_remove),
+    .remove      = kionix_accel_remove,
     .suspend     = kionix_accel_suspend,
     .resume      = kionix_accel_resume,
     .id_table    = kionix_accel_id,
