@@ -773,7 +773,6 @@ static void apds9930_reschedule_work(struct apds9930_data *data,
     * If work is already scheduled then subsequent schedules will not
     * change the scheduled time that's why we have to cancel it first.
     */
-    __cancel_delayed_work(&data->dwork);
     queue_delayed_work(apds_workqueue, &data->dwork, delay);
 }
 
@@ -1182,7 +1181,7 @@ static int apds9930_enable_als_sensor(struct i2c_client *client, int val)
                 * If work is already scheduled then subsequent schedules will not
                 * change the scheduled time that's why we have to cancel it first.
                 */
-                __cancel_delayed_work(&data->als_dwork);
+                
                 KMSGINF("%s: Start the apds9930_als_polling_work_handler, the als_poll_delay is %d\n", __func__, data->als_poll_delay);
                 queue_delayed_work(apds_workqueue, &data->als_dwork, msecs_to_jiffies(data->als_poll_delay));
 
@@ -1209,7 +1208,7 @@ static int apds9930_enable_als_sensor(struct i2c_client *client, int val)
                 * If work is already scheduled then subsequent schedules will not
                 * change the scheduled time that's why we have to cancel it first.
                 */
-                __cancel_delayed_work(&data->als_dwork);
+                
             }
         }
     }
@@ -1236,7 +1235,7 @@ static int apds9930_enable_als_sensor(struct i2c_client *client, int val)
             * If work is already scheduled then subsequent schedules will not
             * change the scheduled time that's why we have to cancel it first.
             */
-            __cancel_delayed_work(&data->ps_dwork);
+            
             queue_delayed_work(apds_workqueue, &data->ps_dwork, msecs_to_jiffies(data->ps_poll_delay));
         }
         else {
@@ -1246,14 +1245,14 @@ static int apds9930_enable_als_sensor(struct i2c_client *client, int val)
             * If work is already scheduled then subsequent schedules will not
             * change the scheduled time that's why we have to cancel it first.
             */
-            __cancel_delayed_work(&data->ps_dwork);
+            
         }
 
         /*
         * If work is already scheduled then subsequent schedules will not
         * change the scheduled time that's why we have to cancel it first.
         */
-        __cancel_delayed_work(&data->als_dwork);
+        
 
     }
 
@@ -1298,7 +1297,7 @@ static int apds9930_set_als_poll_delay(struct i2c_client *client, unsigned int v
     * If work is already scheduled then subsequent schedules will not
     * change the scheduled time that's why we have to cancel it first.
     */
-    __cancel_delayed_work(&data->als_dwork);
+    
     queue_delayed_work(apds_workqueue, &data->als_dwork, msecs_to_jiffies(data->als_poll_delay));
 
     return 0;
@@ -1344,7 +1343,7 @@ static int apds9930_enable_ps_sensor(struct i2c_client *client, int val)
                 * If work is already scheduled then subsequent schedules will not
                 * change the scheduled time that's why we have to cancel it first.
                 */
-                __cancel_delayed_work(&data->ps_dwork);
+                
                 KMSGINF("%s: Start the apds9930_ps_polling_work_handler, the ps_poll_delay is %d\n", __func__, data->ps_poll_delay);
                 queue_delayed_work(apds_workqueue, &data->ps_dwork, msecs_to_jiffies(data->ps_poll_delay));
             }
@@ -1371,7 +1370,7 @@ static int apds9930_enable_ps_sensor(struct i2c_client *client, int val)
                 * If work is already scheduled then subsequent schedules will not
                 * change the scheduled time that's why we have to cancel it first.
                 */
-                __cancel_delayed_work(&data->ps_dwork);
+                
             }
         }
     }
@@ -1387,7 +1386,7 @@ static int apds9930_enable_ps_sensor(struct i2c_client *client, int val)
             * If work is already scheduled then subsequent schedules will not
             * change the scheduled time that's why we have to cancel it first.
             */
-            __cancel_delayed_work(&data->als_dwork);
+            
             queue_delayed_work(apds_workqueue, &data->als_dwork, msecs_to_jiffies(data->als_poll_delay)); // 100ms
         }
         else if (data->enable_als_sensor == APDS_ENABLE_ALS_WITH_INT) {
@@ -1407,13 +1406,13 @@ static int apds9930_enable_ps_sensor(struct i2c_client *client, int val)
             * If work is already scheduled then subsequent schedules will not
             * change the scheduled time that's why we have to cancel it first.
             */
-            __cancel_delayed_work(&data->als_dwork);
+            
         }
         /*
         * If work is already scheduled then subsequent schedules will not
         * change the scheduled time that's why we have to cancel it first.
         */
-        __cancel_delayed_work(&data->ps_dwork);
+        
     }
 
     return 0;
@@ -2486,7 +2485,7 @@ static int apds9930_init_client(struct i2c_client *client)
     return 0;
 }
 
-static int __devinit apds9930_parse_dt_and_init(struct device *dev, struct apds9930_data* data)
+static int apds9930_parse_dt_and_init(struct device *dev, struct apds9930_data* data)
 {
     int ret = 0;
     u32 val;
@@ -2688,7 +2687,7 @@ exit:
 */
 
 static struct i2c_driver apds9930_driver;
-static int __devinit apds9930_probe(struct i2c_client *client,
+static int apds9930_probe(struct i2c_client *client,
     const struct i2c_device_id *id)
 {
     struct i2c_adapter *adapter = to_i2c_adapter(client->dev.parent);
@@ -2807,17 +2806,6 @@ static int __devinit apds9930_probe(struct i2c_client *client,
             KMSGERR("Request gpio failed, err = %d\n", err);
             goto exit_unregister_als_ioctl;
         }
-        err = gpio_tlmm_config(GPIO_CFG(
-            irq_no, 0,
-            GPIO_CFG_INPUT,
-            GPIO_CFG_PULL_UP,
-            GPIO_CFG_2MA),
-            GPIO_CFG_ENABLE);
-        if (err) {
-            KMSGERR("Unable to config tlmm = %d\n", err);
-            gpio_free(irq_no);
-            goto exit_unregister_als_ioctl;
-        }
         err = gpio_direction_input(irq_no);
         if (err) {
             KMSGERR("Set direction for irq failed, err = %d\n", err);
@@ -2869,7 +2857,7 @@ exit:
     return err;
 }
 
-static int __devexit apds9930_remove(struct i2c_client *client)
+static int apds9930_remove(struct i2c_client *client)
 {
     struct apds9930_data *data = i2c_get_clientdata(client);
 
@@ -2938,7 +2926,7 @@ static struct i2c_driver apds9930_driver = {
     .suspend = apds9930_suspend,
     .resume = apds9930_resume,
     .probe  = apds9930_probe,
-    .remove = __devexit_p(apds9930_remove),
+    .remove = apds9930_remove,
     .id_table = apds9930_id,
 };
 
