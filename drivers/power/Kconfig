@@ -486,6 +486,11 @@ config BATTERY_GOLDFISH
 	  Say Y to enable support for the battery and AC power in the
 	  Goldfish emulator.
 
+config QPNP_SHUTDOWN_ON_BSI_LOST
+	bool "Shutdown the phone when BSI is lost"
+	help
+	  This feature is try to shutdown the phone when got BSI lost irq
+
 config QPNP_VM_BMS
 	tristate "QPNP Voltage-Mode Battery Monitoring System driver"
 	depends on SPMI
